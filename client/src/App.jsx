@@ -1,6 +1,7 @@
 
 import './App.css'
 import Navbar from './components/Navbar'
+import Home from './pages/home/Home'
 
 function App() {
  
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
     <Navbar/>
-      <h2>Helloo</h2>
+      <Home/>
     </>
   )
 }
