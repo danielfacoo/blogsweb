@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+
+import { Link } from "react-router-dom";
+
  
 
 
@@ -7,7 +10,7 @@ const Card = ({blog}) => {
 
    const {id, title , image ,category , author , authorPic, published_date , reading_time, content , tags  } = blog;
   return (
-    <a className="block rounded w-full lg:flex mb-10"
+    <Link to={`/blogs/${id}`} className="block rounded w-full lg:flex mb-10"
       href="#"
     >
         {/* image */}
@@ -19,9 +22,10 @@ const Card = ({blog}) => {
       <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
         <div>
             {/* title */}
-          <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
+            <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
             {title}
           </div>
+          
           {/* content */}
           <p className="text-gray-700 text-base">
             {content}
@@ -43,7 +47,7 @@ const Card = ({blog}) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
