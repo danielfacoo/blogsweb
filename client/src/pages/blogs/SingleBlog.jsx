@@ -18,7 +18,7 @@ const SingleBlog = () => {
         window.scrollTo(0,0)
     } ,[dispatch,id])
 
-    console.log(blog)
+    //console.log(blog)
     const { title , image ,category , author , authorPic, published_date , reading_time, content , tags  } = blog;
 
 
@@ -127,7 +127,7 @@ const SingleBlog = () => {
       
     </div>
 
-    <PopularBlogs/>
+    <PopularBlogs tags = {category} currentBlogID = {id}/>
 
     
   </article>
