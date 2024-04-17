@@ -5,6 +5,7 @@ import { AiOutlineArrowRight, AiOutlineHeart } from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchBlog } from '../../redux/features/blogs/singleBlog/BlogSlice'
+import PopularBlogs from './PopularBlogs'
 
 const SingleBlog = () => {
     const{id} = useParams()
@@ -14,6 +15,7 @@ const SingleBlog = () => {
     const { blog }  = useSelector(state => state.blog)
     useEffect(() => {
         dispatch(fetchBlog(id))
+        window.scrollTo(0,0)
     } ,[dispatch,id])
 
     console.log(blog)
@@ -122,7 +124,10 @@ const SingleBlog = () => {
         Back to Blogs
         <AiOutlineArrowRight className="ml-2" />
       </a>
+      
     </div>
+
+    <PopularBlogs/>
 
     
   </article>
